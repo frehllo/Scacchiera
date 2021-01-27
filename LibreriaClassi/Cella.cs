@@ -2,13 +2,13 @@
 
 namespace LibreriaClassi
 {
-    public class Cella
+    public sealed class Cella
     {
         public char Lettera { get; private set; }
         public int Numero { get; private set; }
         public Pezzo Pezzo { get; set; }
 
-        public Cella(int x, char y, Pezzo p)
+        public Cella(int x, char y)
         {
             this.Lettera = y;
             this.Numero = x;

@@ -4,27 +4,39 @@ using System.Text;
 
 namespace LibreriaClassi
 {
-    public class Pezzo
+    public abstract class Pezzo
     {
+        private Cella posizione;
         public int Valore { get; private set; }
-        public Colore Colore { get; private set; }
-        public Cella Cella { get; set; }
-
-        public Pezzo(int v, Colore co, Cella ce)
+        public Colore Schieramento { get; private set; }
+        public Cella Posizione
         {
-            this.Valore = v;
-            this.Colore = co;
-            this.Cella = ce;
+            get => posizione; set
+            {
+                if (posizione != null)
+                    posizione.Pezzo = null;
+                posizione = value;
+                posizione.Pezzo = this;
+            }
+        }
+        public string Name => GetType().Name;
+        public virtual string ShortName => Name.Substring(0, 3);
+        protected Pezzo(int valore, Colore schieramento)
+        {
+            Valore = valore;
+            Schieramento = schieramento;
         }
 
-        public string ToString()
+        public override string ToString()
         {
-            return $"{Valore} {Colore} sta in {Cella}";
+            return $"{Name} {Schieramento} in {Posizione}";
         }
 
-        public void Spostati(Cella c)
-        {
+        public abstract void Muovi(Cella nuovaPosizione);
 
+        public void Errore()
+        {
+            throw new Exception($"Mossa non valida per {Name}");
         }
     }
 }
