@@ -4,8 +4,9 @@ using System.Text;
 
 namespace LibreriaClassi
 {
-    public class Colore
+    public enum Colore
     {
-        public enum colore { Bianco, Nero}
+        Bianco,
+        Nero
     }
 }
