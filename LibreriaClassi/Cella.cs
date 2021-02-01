@@ -4,6 +4,18 @@ namespace LibreriaClassi
 {
     public sealed class Cella
     {
+        public bool Occupata
+        {
+            get
+            {
+                if (Pezzo != null)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
         public char Lettera { get; private set; }
         public int Numero { get; private set; }
         public Pezzo Pezzo { get; set; }

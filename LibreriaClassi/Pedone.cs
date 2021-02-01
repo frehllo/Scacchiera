@@ -9,6 +9,7 @@ namespace LibreriaClassi
         public Pedone(Colore schieramento) : base(1, schieramento) { }
         public override void Muovi(Cella nuovaPosizione)
         {
+            base.Muovi(nuovaPosizione);
             if (nuovaPosizione.Lettera == Posizione.Lettera)
             {
                 int segno = Schieramento == Colore.Bianco ? +1 : -1;

@@ -11,6 +11,7 @@ namespace LibreriaClassi
         }
         public override void Muovi(Cella nuovaPosizione)
         {
+            base.Muovi(nuovaPosizione);
             if (nuovaPosizione.Lettera == Posizione.Lettera ||
                 nuovaPosizione.Numero == Posizione.Numero)
             {

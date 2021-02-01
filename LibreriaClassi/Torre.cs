@@ -9,6 +9,7 @@ namespace LibreriaClassi
         public Torre(Colore schieramento) : base(5, schieramento) { }
         public override void Muovi(Cella nuovaPosizione)
         {
+            base.Muovi(nuovaPosizione);
             if (nuovaPosizione.Lettera == Posizione.Lettera ||
                 nuovaPosizione.Numero == Posizione.Numero)
             {

@@ -11,6 +11,7 @@ namespace LibreriaClassi
         {
             int h = Math.Abs(nuovaPosizione.Numero - Posizione.Numero);
             int v = Math.Abs(nuovaPosizione.Lettera - Posizione.Lettera);
+            base.Muovi(nuovaPosizione);
             if ((h == 3 && v == 1) || (h == 1 && v == 3))
             {
                 Posizione = nuovaPosizione;

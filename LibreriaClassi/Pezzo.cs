@@ -32,11 +32,22 @@ namespace LibreriaClassi
             return $"{Name} {Schieramento} in {Posizione}";
         }
 
-        public abstract void Muovi(Cella nuovaPosizione);
+        public virtual void Muovi(Cella nuovaPosizione)
+        {
+            if(nuovaPosizione.Occupata == true)
+            {
+                CellaOccupata();
+            }
+        }
 
         public void Errore()
         {
             throw new Exception($"Mossa non valida per {Name}");
+        }
+
+        public void CellaOccupata()
+        {
+            throw new Exception($"La cella è già occupata");
         }
     }
 }
